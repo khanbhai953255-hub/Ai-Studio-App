@@ -1,10 +1,18 @@
 import streamlit as st
+import video_tool   # हमारा नया video tool
 
-st.title("🎉 नमस्ते! यह मेरी पहली Streamlit ऐप है।")
+# ऐप का टाइटल
+st.title("🎉 Amir Maudaha AI Studio")
 
-# नाम इनपुट
-name = st.text_input("अपना नाम लिखिए:")
+# Sidebar Menu
+menu = st.sidebar.selectbox("🔍 Choose Tool", ["Home", "Video Tool"])
 
-# अगर नाम डाला है तो स्वागत संदेश दिखेगा
-if name:
-    st.success(f"स्वागत है, {name} जी! 🚀")
+# Home Page
+if menu == "Home":
+    name = st.text_input("अपना नाम लिखिए:")
+    if name:
+        st.success(f"स्वागत है, {name} जी! 🚀")
+
+# Video Tool Page
+elif menu == "Video Tool":
+    video_tool.run()   # video_tool.py का function call
