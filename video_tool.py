@@ -1,4 +1,19 @@
 import streamlit as st
+
+def run():
+    st.header("🎬 Video Tool")
+    st.write("यहाँ आप अपने वीडियो से जुड़े काम कर सकते हैं।")
+
+    # Example: यूज़र वीडियो अपलोड करे
+    video_file = st.file_uploader("वीडियो अपलोड करें", type=["mp4", "mov", "avi"])
+    if video_file:
+        st.video(video_file)
+        st.success("✅ वीडियो सफलतापूर्वक अपलोड हो गया!")
+
+    # Example: टेक्स्ट इनपुट
+    text = st.text_input("वीडियो का टाइटल लिखिए:")
+    if text:
+        st.info(f"आपने टाइटल लिखा: {text}")import streamlit as st
 from PIL import Image
 from moviepy.editor import ImageClip, concatenate_videoclips, AudioFileClip
 import numpy as np
