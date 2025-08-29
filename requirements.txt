@@ -3,3 +3,9 @@ moviepy
 Pillow
 numpy
 imageio-ffmpeg
+requests
+gTTSstreamlit
+moviepy
+Pillow
+numpy
+imageio-ffmpeg
